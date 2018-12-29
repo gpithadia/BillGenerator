@@ -1,0 +1,32 @@
+{
+  "name": "Vendor",
+  "plural": "vendors",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "invoice": {
+      "type": "hasMany",
+      "model": "invoice",
+      "foreignKey": "vendorId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
